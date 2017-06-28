@@ -1,2 +1,8 @@
 # ShotTracker
 Uses an OCR to read text from PGA Shot Tracker application
+
+The idea of this project is to take screen shots of Shot Tracker information displayed on the official PGA Tour website (www.pgatour.com) and then use an OCR to read the text. An example of such information can be seen by going to the following link, http://www.pgatour.com/competition/2017/sbs-tournament-of-champions/leaderboard.html, clicking on a player's name and then selecting "PLAY-BY-PLAY". The Robot class is used to click through a browser interface and take screen shots of this play-by-play data. The image editor program GIMP (https://www.gimp.org/) is used to resize the images so that they can be more easily read by the OCR. The OCR used is the open source project Tesseract found at https://github.com/tesseract-ocr/tesseract/wiki.
+
+This project is still a work in progress. The program can successfully read player's name, round numbers and hole numbers. The greatest challenge is reading the play-by-play text, which is not perfect yet, but thanks to resizing images with GIMP is moderately successful. Due to the fact that the text follows similiar patterns, the current capabilities of the program to read play-by-play text may be sufficient to determine the actual text.
+
+The code will not work as is for a couple of reasons. The folder paths are hardcoded and the assumed screen resolution is 1366x768 (the resolution of the laptop that I tested the code on). Also the programs GIMP and and Tesseract mentioned above will need to be installed. Finally, the PGA Tour website has changed the graphical layout since the code was initially written and the code has not been updated to work with the new layout
